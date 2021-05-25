@@ -24,7 +24,11 @@ In order to perform training:
 - run the section "Models"
 - in the section "Model training" specify the training hyperparameters (batch size, epochs)
 - choose (Net1_1, Net1_2, Net1_3, Net2, or UpgradedNet) and initialize the model 
-- define training parameters: criterion, optimizer, scheduler, scheduler mode
+- define training parameters: 
+1) criterion:
+2) optimizer:
+3) scheduler: 
+4) scheduler mode:
 - run the training process specifying flags for saving the model (if True - then the best model will be automatically saved on the Google Colab)
 - after training is completed, visualize the validation and training losses
 

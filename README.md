@@ -22,13 +22,15 @@ The data consists of 48x48 pixel grayscale images of faces. The training set con
 In order to perform training:
 - run the section "Downloading the data and data preparation functions initialization"
 - run the section "Models"
-- in the section "Model training" specify the training hyperparameters (batch size, epochs)
-- choose (Net1_1, Net1_2, Net1_3, Net2, or UpgradedNet) and initialize the model 
+- in the section "Model training" specify the training hyperparameters (batch size, epochs):
+1) batch size: value in [64, 128, 256, 512]
+2) epochs: value in a range (1, 50)
+- choose and initialize the model: Net1_1, Net1_2, Net1_3, Net2, or UpgradedNet
 - define training parameters: 
-1) criterion:
-2) optimizer:
-3) scheduler: 
-4) scheduler mode:
+3) criterion: nn.NLLLoss(), nn.CrossEntropyLoss()
+4) optimizer: Adam(model.parameters(), lr=3e-3), SGD(model.parameters(), lr=0.002, momentum=0.9, weight_decay=9e-4)
+5) scheduler: OneCycleLR(optimizer, max_lr=0.02, steps_per_epoch=len(trainloader), pct_start=0.2, div_factor=10, cycle_momentum=False, epochs=epochs), CosineAnnealingLR(optimizer, T_max=epochs, eta_min=0, last_epoch=-1, verbose=False)
+6) scheduler mode: 'epoch', 'batch'
 - run the training process specifying flags for saving the model (if True - then the best model will be automatically saved on the Google Colab)
 - after training is completed, visualize the validation and training losses
 

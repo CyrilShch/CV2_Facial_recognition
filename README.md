@@ -1,8 +1,8 @@
 # Assignment 2. Facial emotion recognition using CNN.
 
 ## Dependencies
-
 - Python 3
+- NVIDIA GPU + CUDA cuDNN
 - [NumPy](http://www.numpy.org/)
 - [Matplotlib](https://matplotlib.org/)
 - [Scipy](https://www.scipy.org/)

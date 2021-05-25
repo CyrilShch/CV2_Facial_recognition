@@ -1,1 +1,1 @@
-# CV2_Facial_recognition
+# Assignment 2. Facial emotion recognition using CNN.
